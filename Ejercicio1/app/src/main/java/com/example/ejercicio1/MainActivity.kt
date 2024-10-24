@@ -16,6 +16,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -24,6 +25,9 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AccountCircle
 import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material.icons.filled.Edit
+import androidx.compose.material.icons.filled.Favorite
+import androidx.compose.material.icons.filled.Home
 import androidx.compose.material3.BottomAppBar
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -87,36 +91,36 @@ class MainActivity : ComponentActivity() {
                                 horizontalArrangement = Arrangement.SpaceEvenly
                             )
                             {
-                                Box(
-                                    Modifier
-                                        .clip(shape = CircleShape)
-                                        .height(35.dp)
-                                        .width(35.dp)
-                                        .background(Color.Black)
+                                Icon(
+                                    imageVector = Icons.Default.Home, // Icono predeterminado
+                                    contentDescription = "Home",
+                                    modifier = Modifier
+                                        .size(35.dp)
                                         .clickable {
                                             navController.navigate("screen1")
-                                        }
-                                ) {}
-                                Box(
-                                    Modifier
-                                        .clip(shape = CircleShape)
-                                        .height(35.dp)
-                                        .width(35.dp)
-                                        .background(Color.Black)
+                                        },
+                                    tint = Color.Black // Color del ícono
+                                )
+                                Icon(
+                                    imageVector = Icons.Default.Edit, // Icono predeterminado
+                                    contentDescription = "Edit",
+                                    modifier = Modifier
+                                        .size(35.dp)
                                         .clickable {
                                             navController.navigate("screen2")
-                                        }
-                                ) {}
-                                Box(
-                                    Modifier
-                                        .clip(shape = CircleShape)
-                                        .height(35.dp)
-                                        .width(35.dp)
-                                        .background(Color.Black)
+                                        },
+                                    tint = Color.Black // Color del ícono
+                                )
+                                Icon(
+                                    imageVector = Icons.Default.Favorite, // Icono predeterminado
+                                    contentDescription = "Favourites",
+                                    modifier = Modifier
+                                        .size(35.dp)
                                         .clickable {
                                             navController.navigate("screen3")
-                                        }
-                                ) {}
+                                        },
+                                    tint = Color.Black // Color del ícono
+                                )
                             }
                         }
                     },
